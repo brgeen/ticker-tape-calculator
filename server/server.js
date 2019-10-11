@@ -18,6 +18,15 @@ app.get('/calculations', (req, res) => {
 });
 
 app.post('/calculations', (req, res) => {
+    let leftNumber = req.body.leftNumber
+    let rightNumber = req.body.rightNumber
+    let operator = req.body.operator
+
+    let result = `${parseInt(leftNumber)} ${operator} ${parseInt(rightNumber)}`
+
+    console.log(eval(result));
+    
+
     calculations.push(req.body);
 
     console.log(calculations);

@@ -5,6 +5,7 @@ $(document).ready(() => {
     $('#equals-button').on('click', calculate);
     $('#add-button').on('click', addButton);
     $('#subtract-button').on('click', subtractButton);
+    $('#multiply-button').on('click', multiplyButton);
     $('#divide-button').on('click', divideButton);
 
 })
@@ -21,7 +22,6 @@ function multiplyButton() {
 function divideButton() {
     operator = '/';
 }
-
 
 let operator = '';
 
