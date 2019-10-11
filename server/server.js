@@ -11,6 +11,19 @@ app.use(express.static('server/public'))
 const PORT = 5000;
 
 
+let calculations = [];
+
+app.get('/calculations', (req, res) => {
+    res.send(calculations);
+});
+
+app.post('/calculations', (req, res) => {
+    calculations.push(req.body);
+
+    console.log(calculations);
+    
+});
+
 
 
 
