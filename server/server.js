@@ -24,6 +24,7 @@ app.post('/calculations', (req, res) => {
 
     let result = `${parseInt(leftNumber)} ${operator} ${parseInt(rightNumber)}`
 
+    req.body.result = eval(result);
     console.log(eval(result));
     
 
