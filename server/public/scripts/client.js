@@ -3,8 +3,27 @@ console.log('javascript running');
 $(document).ready(() => {
     console.log('jQuery loaded');
     $('#equals-button').on('click', calculate);
+    $('#add-button').on('click', addButton);
+    $('#subtract-button').on('click', subtractButton);
+    $('#divide-button').on('click', divideButton);
 
 })
+
+function addButton() {
+    operator = '+';
+}
+function subtractButton() {
+    operator = '-';
+}
+function multiplyButton() {
+    operator = '*';
+}
+function divideButton() {
+    operator = '/';
+}
+
+
+let operator = '';
 
 function calculate() {
     console.log('clicked');
@@ -16,7 +35,7 @@ function calculate() {
         method: 'POST',
         data: {
             leftNumber: $('#left-value').val(),
-            operator: $('#add-button').val(),
+            operator: operator,
             rightNumber: $('#right-value').val(),
             result: 0,
         }
