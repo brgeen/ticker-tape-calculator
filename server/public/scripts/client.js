@@ -7,8 +7,10 @@ $(document).ready(() => {
     $('#subtract-button').on('click', subtractButton);
     $('#multiply-button').on('click', multiplyButton);
     $('#divide-button').on('click', divideButton);
+    $('#clear-button').on('click', clearFieldsButton);
     getCalculationResult()
     getCalculationHistory()
+
 
 
 })
@@ -27,6 +29,11 @@ function divideButton() {
 }
 
 let operator = '';
+
+function clearFieldsButton() {
+    $('#left-value').val('');
+    $('#right-value').val('');
+}
 
 function calculate() {
 
