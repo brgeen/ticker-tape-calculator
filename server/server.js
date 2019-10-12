@@ -1,10 +1,10 @@
 const express = require('express');
 
-const bodyParser = require('body-parser'); 
+const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(bodyParser.urlencoded({extended: true})); 
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('server/public'))
 
@@ -18,20 +18,29 @@ app.get('/calculations', (req, res) => {
 });
 
 app.post('/calculations', (req, res) => {
+
     let leftNumber = req.body.leftNumber
     let rightNumber = req.body.rightNumber
     let operator = req.body.operator
 
-    let result = `${parseInt(leftNumber)} ${operator} ${parseInt(rightNumber)}`
+    function serverSideCalculation() {
 
-    req.body.result = eval(result);
-    console.log(eval(result));
-    
+        if (operator === '+') {
+            return parseInt(leftNumber) + parseInt(rightNumber);
+        } else if (operator === '-') {
+            return leftNumber - rightNumber;
+        } else if (operator === '*') {
+            return leftNumber * rightNumber;
+        } else if (operator === '/') {
+            return leftNumber / rightNumber;
+        }
 
+    };
+
+    req.body.result = serverSideCalculation();
     calculations.push(req.body);
-
     res.sendStatus(200);
-    
+
 });
 
 app.listen(PORT, () => { // this listens for the port
