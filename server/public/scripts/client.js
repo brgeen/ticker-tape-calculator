@@ -7,6 +7,9 @@ $(document).ready(() => {
     $('#subtract-button').on('click', subtractButton);
     $('#multiply-button').on('click', multiplyButton);
     $('#divide-button').on('click', divideButton);
+    getCalculationResult()
+    getCalculationHistory()
+
 
 })
 
@@ -62,6 +65,38 @@ function appendCalculationResult(response) {
     $('#calculation-result').append(`
         <h3>${response[response.length - 1].result}</h3>
     `);
+    getCalculationHistory();
+}
+
+function getCalculationHistory() {
+
+    $.ajax({
+        type: 'GET',
+        url: '/calculations'
+    }).then(function (response) {
+        appendCalculationHistory(response)
+    });
+}
+
+function appendCalculationHistory(response) {
+
+    $('#calculation-history').empty();
+
+
+    for (const object of response) {
+
+        $('#calculation-history').append(
+            `<li>
+            ${object.leftNumber} 
+            ${object.operator} 
+            ${object.rightNumber} 
+            =
+            ${object.result} 
+            </li>`
+        );
+
+
+    }
 
 }
 
