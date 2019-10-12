@@ -26,9 +26,8 @@ function divideButton() {
 let operator = '';
 
 function calculate() {
-    console.log('clicked');
 
-    // $('#gameTable').empty();
+    $('#calculation-result').empty();
 
     $.ajax({
         url: '/calculations',
@@ -41,44 +40,28 @@ function calculate() {
         }
 
     }).then(function (response) {
-
         getCalculationResult();
     });
-    // $('#newPlayerName').val('');
+
+    $('#left-value').val('');
+    $('#right-value').val('');
 }
 
-/*
-
-
 function getCalculationResult() {
+
     $.ajax({
         type: 'GET',
-        url: '/add-games'
+        url: '/calculations'
     }).then(function (response) {
         appendCalculationResult(response)
-        // this is calling the external function
     });
 }
 
 function appendCalculationResult(response) {
 
-    for (let i = 0; i < response.length; i++) {
-
-
-
-        $('#gameTable').append(`
-        <tr>
-        <td>${response[i].playerName}</td>
-        <td>${response[i].playerScore}</td>
-        <td>${response[i].opponentName}</td>
-        <td>${response[i].opponentScore}</td>
-        <td>${response[i].gameWinner}</td>
-        </tr>
+    $('#calculation-result').append(`
+        <h3>${response[response.length - 1].result}</h3>
     `);
 
-        console.log(response);
-
-    }
 }
 
-*/

@@ -30,16 +30,9 @@ app.post('/calculations', (req, res) => {
 
     calculations.push(req.body);
 
-    console.log(calculations);
+    res.sendStatus(200);
     
 });
-
-
-
-
-
-
-
 
 app.listen(PORT, () => { // this listens for the port
     console.log('Up and running on port', PORT);
