@@ -1,6 +1,10 @@
 body {
     font-family: Lucidatypewriter, monospace;
 }
+#body-wrapper {
+    margin-left: 20px;
+    margin-top: 15px;
+}
 button {
     font-family: Lucidatypewriter, monospace;
     font-size: 20px;
@@ -9,13 +13,17 @@ button {
 h1 {
     color: gray;
     font-size: 38px;
+    line-height: 38px;
+    margin-left: 5px;
+    margin-top: 5px;
 }
 
 #field-input {
     width: 293px;
+    height: 40px;
     margin-left: 8px;
     padding: 20px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 #calculator-field {
@@ -26,7 +34,7 @@ h1 {
 #calc-body-wrapper {
     display: flex;
     flex-direction: row;
-  
+    
 }
 
 #calculator-body {
