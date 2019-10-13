@@ -1,5 +1,14 @@
+body {
+    font-family: Lucidatypewriter, monospace;
+}
+button {
+    font-family: Lucidatypewriter, monospace;
+    font-size: 20px;
+}
+
 h1 {
     color: gray;
+    font-size: 38px;
 }
 
 #field-input {
@@ -7,6 +16,11 @@ h1 {
     margin-left: 8px;
     padding: 20px;
     font-size: 20px;
+}
+
+#calculator-field {
+    display: flex;
+    flex-direction: row;
 }
 
 #calc-body-wrapper {
@@ -24,12 +38,12 @@ h1 {
 }
 
 .calc-body-buttons {
-    padding: 30px;
+    padding: 25px;
     margin: 5px;
 }
 
 .calc-operator-buttons {
-    padding: 30px;
+    padding: 25px;
     margin: 5px;
 }
 
@@ -39,4 +53,21 @@ h1 {
     flex-direction: column;
     flex-basis: 100px;
     /* flex-wrap: wrap; */
+}
+
+#calculation-output {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 40px;
+}
+
+#calculation-result {
+    font-size: 30px;
+    margin-left: 115px;
+}
+
+#calculation-history {
+    font-size: 18px;
 }

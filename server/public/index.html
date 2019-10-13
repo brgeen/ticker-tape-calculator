@@ -8,18 +8,17 @@
     <script src="scripts/jquery.js"></script>
     <script src="scripts/client.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>jQuery Calculator</title>
+    <title>Ticker Tape Calculator</title>
 </head>
 
 <body>
 
-    <h1>jQuery Calculator</h1>
-
-
+    <h1>Ticker Tape Calculator</h1>
 
 
     <div id="calculator-field">
         <input id="field-input" type="text" onkeydown="return false">
+        <div id="calculation-result"></div>
     </div>
     <div id="calc-body-wrapper">
         <div id="calculator-body">
@@ -42,14 +41,14 @@
             <button class="calc-operator-buttons" id="multiply-button">*</button>
             <button class="calc-operator-buttons" id="divide-button">/</button>
             <button class="calc-operator-buttons" id="equals-button">=</button>
-            
+        </div>
+        <div id="calculation-output"> 
+            <ul id="calculation-history"></ul>
         </div>
     </div>
 
 
-    <div id="calculation-result"></div>
 
-    <ul id="calculation-history">History</ul>
 
 </body>
 
