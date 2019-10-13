@@ -15,29 +15,35 @@
 
     <h1>jQuery Calculator</h1>
 
-    <div id="calculator-operators">
-        <button id="add-button">+</button>
-        <button id="subtract-button">-</button>
-        <button id="multiply-button">*</button>
-        <button id="divide-button">/</button>
-        <button id="equals-button">=</button>
-        <button id="clear-button">c</button>
-    </div>
-    <br>
 
-    <div id="calculator-body">
+
+
+    <div id="calculator-field">
         <input id="field-input" type="text" onkeydown="return false">
-        <button class="calc-body-buttons" id="one-button">1</button>
-        <button class="calc-body-buttons" id="two-button">2</button>
-        <button class="calc-body-buttons" id="three-button">3</button>
-        <button class="calc-body-buttons" id="four-button">4</button>
-        <button class="calc-body-buttons" id="five-button">5</button>
-        <button class="calc-body-buttons" id="six-button">6</button>
-        <button class="calc-body-buttons" id="seven-button">7</button>
-        <button class="calc-body-buttons" id="eight-button">8</button>
-        <button class="calc-body-buttons" id="nine-button">9</button>
-        <button class="calc-body-buttons" id="zero-button">0</button>
-        <button class="calc-body-buttons" id="decimal-button">.</button>
+    </div>
+    <div id="calc-body-wrapper">
+        <div id="calculator-body">
+            <button class="calc-body-buttons" id="one-button">1</button>
+            <button class="calc-body-buttons" id="two-button">2</button>
+            <button class="calc-body-buttons" id="three-button">3</button>
+            <button class="calc-body-buttons" id="four-button">4</button>
+            <button class="calc-body-buttons" id="five-button">5</button>
+            <button class="calc-body-buttons" id="six-button">6</button>
+            <button class="calc-body-buttons" id="seven-button">7</button>
+            <button class="calc-body-buttons" id="eight-button">8</button>
+            <button class="calc-body-buttons" id="nine-button">9</button>
+            <button class="calc-body-buttons" id="zero-button">0</button>
+            <button class="calc-body-buttons" id="decimal-button">.</button>
+            <button class="calc-operator-buttons" id="clear-button">c</button>
+        </div>
+        <div id="calculator-operators">
+            <button class="calc-operator-buttons" id="add-button">+</button>
+            <button class="calc-operator-buttons" id="subtract-button">-</button>
+            <button class="calc-operator-buttons" id="multiply-button">*</button>
+            <button class="calc-operator-buttons" id="divide-button">/</button>
+            <button class="calc-operator-buttons" id="equals-button">=</button>
+            
+        </div>
     </div>
 
 
