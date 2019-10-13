@@ -8,9 +8,17 @@ $(document).ready(() => {
     $('#multiply-button').on('click', multiplyButton);
     $('#divide-button').on('click', divideButton);
     $('#clear-button').on('click', clearFieldsButton);
+    $('#calculator-body').on('click', '.calc-body-buttons', calculatorBodyButtonsHandler);
     getCalculationResult()
     getCalculationHistory()
 })
+
+
+function calculatorBodyButtonsHandler() {
+    let buttonValue = $(this).closest('.calc-body-buttons').text();
+    console.log(buttonValue);
+
+}
 
 function addButton() {
     operator = '+';
