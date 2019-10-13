@@ -23,7 +23,7 @@ app.post('/calculations', (req, res) => {
     function serverSideCalculation() {
 
         if (operator === '+') {
-            return parseInt(leftNumber) + parseInt(rightNumber);
+            return parseFloat(leftNumber) + parseFloat(rightNumber);
         } else if (operator === '-') {
             return leftNumber - rightNumber;
         } else if (operator === '*') {

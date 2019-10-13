@@ -15,18 +15,18 @@
 
     <h1>jQuery Calculator</h1>
 
-    <div id="calculation">
-        <input id="left-value" type="number">
+    <div id="calculator-operators">
         <button id="add-button">+</button>
         <button id="subtract-button">-</button>
         <button id="multiply-button">*</button>
         <button id="divide-button">/</button>
-        <input id="right-value" type="number">
         <button id="equals-button">=</button>
         <button id="clear-button">c</button>
     </div>
+    <br>
 
     <div id="calculator-body">
+        <input id="field-input" type="text" onkeydown="return false">
         <button class="calc-body-buttons" id="one-button">1</button>
         <button class="calc-body-buttons" id="two-button">2</button>
         <button class="calc-body-buttons" id="three-button">3</button>

@@ -13,31 +13,48 @@ $(document).ready(() => {
     getCalculationHistory()
 })
 
+let leftSideOfOperator = '';
+let operator = '';
+let rightSideOfOperator = '';
+let fieldInput = '';
 
 function calculatorBodyButtonsHandler() {
-    let buttonValue = $(this).closest('.calc-body-buttons').text();
-    console.log(buttonValue);
-
+    if (operator.length === 0) {
+        leftSideOfOperator += $(this).closest('.calc-body-buttons').text()
+        fieldInput += $(this).closest('.calc-body-buttons').text()
+    }
+    if (operator.length === 1) {
+        rightSideOfOperator += $(this).closest('.calc-body-buttons').text()
+        fieldInput += $(this).closest('.calc-body-buttons').text()
+    }
+    $('#field-input').val(fieldInput);
 }
 
 function addButton() {
     operator = '+';
+    fieldInput += '+'
+    $('#field-input').val(fieldInput);
 }
 function subtractButton() {
     operator = '-';
+    fieldInput += '-'
+    $('#field-input').val(fieldInput);
 }
 function multiplyButton() {
     operator = '*';
+    fieldInput += '*'
+    $('#field-input').val(fieldInput);
 }
 function divideButton() {
     operator = '/';
+    fieldInput += '/'
+    $('#field-input').val(fieldInput);
 }
-
-let operator = '';
 
 function clearFieldsButton() {
     $('#left-value').val('');
     $('#right-value').val('');
+    $('#field-input').val('');
 }
 
 function calculate() {
@@ -48,14 +65,19 @@ function calculate() {
         url: '/calculations',
         method: 'POST',
         data: {
-            leftNumber: $('#left-value').val(),
+            leftNumber: leftSideOfOperator, //$('#left-value').val(),
             operator: operator,
-            rightNumber: $('#right-value').val(),
+            rightNumber: rightSideOfOperator, //$('#right-value').val(),
             result: 0,
         }
     }).then(function (response) {
         getCalculationResult();
     });
+    leftSideOfOperator = '';
+    operator = '';
+    rightSideOfOperator = '';
+    fieldInput = '';
+
 }
 
 function getCalculationResult() {
