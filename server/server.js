@@ -1,15 +1,12 @@
 const express = require('express');
-
 const bodyParser = require('body-parser');
-
 const app = express();
-
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.use(express.static('server/public'))
-
 const PORT = 5000;
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('server/public'))
+
+// ------------------------------------------------
 
 let calculations = [];
 
@@ -34,13 +31,10 @@ app.post('/calculations', (req, res) => {
         } else if (operator === '/') {
             return leftNumber / rightNumber;
         }
-
     };
-
     req.body.result = serverSideCalculation();
     calculations.push(req.body);
     res.sendStatus(200);
-
 });
 
 app.listen(PORT, () => { // this listens for the port

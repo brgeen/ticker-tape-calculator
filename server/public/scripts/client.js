@@ -10,9 +10,6 @@ $(document).ready(() => {
     $('#clear-button').on('click', clearFieldsButton);
     getCalculationResult()
     getCalculationHistory()
-
-
-
 })
 
 function addButton() {
@@ -48,13 +45,9 @@ function calculate() {
             rightNumber: $('#right-value').val(),
             result: 0,
         }
-
     }).then(function (response) {
         getCalculationResult();
     });
-
-    $('#left-value').val('');
-    $('#right-value').val('');
 }
 
 function getCalculationResult() {
@@ -89,10 +82,9 @@ function appendCalculationHistory(response) {
 
     $('#calculation-history').empty();
 
-
     for (const object of response) {
 
-        $('#calculation-history').append(
+        $('#calculation-history').prepend(
             `<li>
             ${object.leftNumber} 
             ${object.operator} 
@@ -101,9 +93,6 @@ function appendCalculationHistory(response) {
             ${object.result} 
             </li>`
         );
-
-
     }
-
 }
 
