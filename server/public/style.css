@@ -1,17 +1,19 @@
 body {
     font-family: Lucidatypewriter, monospace;
-    background: url(/images/old_mathematics_@2X.png);
+    background: url(/images/congruent_pentagon.png);
 }
+
 #body-wrapper {
     margin-left: 20px;
     margin-top: 15px;
 }
+
 button {
     font-family: Lucidatypewriter, monospace;
     font-size: 20px;
     font-weight: bold;
     font-variant-caps: all-small-caps;
-    background-color: #a6d6fab0;
+    background-color: #a6f7fab0;
     border-style: solid;
     transition-duration: 0.4s;
     outline: none;
@@ -19,11 +21,11 @@ button {
 }
 
 button:hover {
-    background-color: #8eceffb0;
+    background-color: #d0fcfdb0;
 }
 
 h1 {
-    color: #2c2c2ce7;
+    color: #222222de;
     font-size: 38px;
     line-height: 38px;
     margin-left: 5px;
@@ -35,23 +37,21 @@ h1 {
     height: 40px;
     margin-left: 8px;
     padding: 20px;
-    font-size: 15px;
+    font-size: 20px;
     box-shadow: 0 0 5px 0 rgba(25, 25, 25, 0.1);
-    background-color: #eff8ffb2;;
-    
+    background-color: #eff8ffb2;
+    font-variant: small-caps;
 }
 
 #calculator-field {
     display: flex;
     flex-direction: row;
     opacity: 0.8;
-    
 }
 
 #calc-body-wrapper {
     display: flex;
     flex-direction: row;
-    
 }
 
 #calculator-body {
@@ -73,7 +73,6 @@ h1 {
 }
 
 #calculator-operators {
-    
     display: flex;
     flex-direction: column;
     flex-basis: 100px;
@@ -94,5 +93,5 @@ h1 {
 }
 
 #calculation-history {
-    font-size: 18px;
+    font-size: 19px;
 }
