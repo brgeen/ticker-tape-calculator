@@ -9,8 +9,8 @@ $(document).ready(() => {
     $('#divide-button').on('click', divideButton);
     $('#clear-button').on('click', clearFieldsButton);
     $('#calculator-body').on('click', '.calc-body-buttons', calculatorBodyButtonsHandler);
-    getCalculationResult()
-    getCalculationHistory()
+    getCalculationResult();
+    getCalculationHistory();
 })
 
 let leftSideOfOperator = '';
@@ -20,12 +20,12 @@ let fieldInput = '';
 
 function calculatorBodyButtonsHandler() {
     if (operator.length === 0) {
-        leftSideOfOperator += $(this).closest('.calc-body-buttons').text()
-        fieldInput += $(this).closest('.calc-body-buttons').text()
+        leftSideOfOperator += $(this).closest('.calc-body-buttons').text();
+        fieldInput += $(this).closest('.calc-body-buttons').text();
     }
     if (operator.length === 1) {
-        rightSideOfOperator += $(this).closest('.calc-body-buttons').text()
-        fieldInput += $(this).closest('.calc-body-buttons').text()
+        rightSideOfOperator += $(this).closest('.calc-body-buttons').text();
+        fieldInput += $(this).closest('.calc-body-buttons').text();
     }
     $('#field-input').val(fieldInput);
 }
@@ -59,24 +59,30 @@ function clearFieldsButton() {
 
 function calculate() {
 
-    $('#calculation-result').empty();
+    if (rightSideOfOperator.length >= 1) { // this test for all necessary input
 
-    $.ajax({
-        url: '/calculations',
-        method: 'POST',
-        data: {
-            leftNumber: leftSideOfOperator, //$('#left-value').val(),
-            operator: operator,
-            rightNumber: rightSideOfOperator, //$('#right-value').val(),
-            result: 0,
-        }
-    }).then(function (response) {
-        getCalculationResult();
-    });
-    leftSideOfOperator = '';
-    operator = '';
-    rightSideOfOperator = '';
-    fieldInput = '';
+        $('#calculation-result').empty();
+
+        $.ajax({
+            url: '/calculations',
+            method: 'POST',
+            data: {
+                leftNumber: leftSideOfOperator,
+                operator: operator,
+                rightNumber: rightSideOfOperator,
+                result: 0,
+            }
+        }).then(function (response) {
+            getCalculationResult();
+        });
+        leftSideOfOperator = '';
+        operator = '';
+        rightSideOfOperator = '';
+        fieldInput = '';
+    
+    } else {
+        null;
+    }
 
 }
 
@@ -86,7 +92,7 @@ function getCalculationResult() {
         type: 'GET',
         url: '/calculations'
     }).then(function (response) {
-        appendCalculationResult(response)
+        appendCalculationResult(response);
     });
 }
 
@@ -104,7 +110,7 @@ function getCalculationHistory() {
         type: 'GET',
         url: '/calculations'
     }).then(function (response) {
-        appendCalculationHistory(response)
+        appendCalculationHistory(response);
     });
 }
 

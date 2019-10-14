@@ -1,5 +1,6 @@
 body {
     font-family: Lucidatypewriter, monospace;
+    background: url(/images/old_mathematics_@2X.png);
 }
 #body-wrapper {
     margin-left: 20px;
@@ -8,10 +9,21 @@ body {
 button {
     font-family: Lucidatypewriter, monospace;
     font-size: 20px;
+    font-weight: bold;
+    font-variant-caps: all-small-caps;
+    background-color: #a6d6fab0;
+    border-style: solid;
+    transition-duration: 0.4s;
+    outline: none;
+    box-shadow: -2px 2px 1px 0 rgba(25, 25, 25, 0.1);
+}
+
+button:hover {
+    background-color: #8eceffb0;
 }
 
 h1 {
-    color: gray;
+    color: #2c2c2ce7;
     font-size: 38px;
     line-height: 38px;
     margin-left: 5px;
@@ -24,11 +36,16 @@ h1 {
     margin-left: 8px;
     padding: 20px;
     font-size: 15px;
+    box-shadow: 0 0 5px 0 rgba(25, 25, 25, 0.1);
+    background-color: #eff8ffb2;;
+    
 }
 
 #calculator-field {
     display: flex;
     flex-direction: row;
+    opacity: 0.8;
+    
 }
 
 #calc-body-wrapper {
