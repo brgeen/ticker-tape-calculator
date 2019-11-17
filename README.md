@@ -19,17 +19,8 @@ This is a digital counterpart to the classic paper roll calculator. This applica
 
 ## Installation
 
-- Clone or download the repository from GitHub.
-- https://github.com/brgeen/jquery-server-side-calculator
-- Download and install Node.
-- https://nodejs.org/en/download/current/
-- Open your terminal and install Node Package Manager.
-- `npm install`
-- In your terminal, install express.
-- `npm install express`
-- Start express from your terminal.
-- `npm start`
-- Open your browser and navigate to http://localhost:5000/
+- Visit Heroku at
+- https://ticker-tape-calculator.herokuapp.com/
 
 ## Contact
 
